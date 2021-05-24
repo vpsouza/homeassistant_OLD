@@ -1,0 +1,131 @@
+- id: '1619997839479'
+  alias: Vinicius leaves home
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 431c7dba66e521818018ca936933ebb8
+    domain: device_tracker
+    entity_id: device_tracker.iphone_vinicius
+    type: leaves
+    zone: zone.home
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.vinicius_at_home
+  mode: single
+- id: '1619997896949'
+  alias: Vini chegou em casa
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 431c7dba66e521818018ca936933ebb8
+    domain: device_tracker
+    entity_id: device_tracker.iphone_vinicius
+    type: enters
+    zone: zone.home
+  condition: []
+  action:
+  - service: script.chegando_em_casa
+  mode: single
+- id: '1620594263712'
+  alias: Hora do café da manha dia util
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:15:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.cafe_da_manha
+  mode: single
+- id: '1621110653712'
+  alias: Mari chegou em casa
+  description: ''
+  trigger:
+  - platform: device
+    device_id: be4c7a351f55f6404c19d564629e6caa
+    domain: device_tracker
+    entity_id: device_tracker.iphone_de_mariana
+    type: enters
+    zone: zone.home
+  condition: []
+  action:
+  - service: script.chegando_em_casa
+  mode: single
+- id: '1621111075730'
+  alias: 'Lembrete pra Mari: Carregue o celular'
+  description: ''
+  trigger:
+  - type: battery_level
+    platform: device
+    device_id: be4c7a351f55f6404c19d564629e6caa
+    entity_id: sensor.iphone_de_mariana_battery_level
+    domain: sensor
+    below: 26
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - sun
+    after: '21:45'
+  action:
+  - service: notify.mobile_app_iphone_de_mariana
+    data:
+      message: Não esqueça de carregar seu celular! Sua bateria está baixa.
+      title: Seu amorzinho te lembrou!
+  mode: single
+- id: '1621111178118'
+  alias: 'Lembrete pro Vini: Carregue o celular!'
+  description: ''
+  trigger:
+  - type: battery_level
+    platform: device
+    device_id: 431c7dba66e521818018ca936933ebb8
+    entity_id: sensor.iphone_vinicius_battery_level
+    domain: sensor
+    below: 26
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  condition:
+  - condition: time
+    after: '21:45'
+  action:
+  - service: notify.mobile_app_iphone_do_vinicius
+    data:
+      message: Não se esqueça de carregar o celular! Sua bateria esta baixa.
+  mode: single
+- id: '1621187343310'
+  alias: Luzes de dia
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: light.todas_as_luzes
+    to: 'on'
+    from: 'off'
+  condition:
+  - condition: time
+    after: '7:00'
+    before: '18:00'
+  action:
+  - service: scene.apply
+  mode: single

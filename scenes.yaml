@@ -1,0 +1,92 @@
+- id: '1619782782939'
+  name: Café da manhã
+  entities:
+    light.sala_de_jantar_1:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 153.00000000000006
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E62E0FF
+      friendly_name: Sala de Jantar 1
+      supported_features: 3
+    light.sala_de_jantar_2:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 153.00000000000006
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E66AEBC
+      friendly_name: Sala de Jantar 2
+      supported_features: 3
+    light.sala_de_jantar_3:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 153.00000000000006
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E6695BA
+      friendly_name: Sala de Jantar 3
+      supported_features: 3
+  icon: mdi:tea
+- id: '1619782911752'
+  name: Jantar
+  entities:
+    light.sala_de_jantar_1:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 500
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E62E0FF
+      friendly_name: Sala de Jantar 1
+      supported_features: 3
+    light.sala_de_jantar_2:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 500
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E66AEBC
+      friendly_name: Sala de Jantar 2
+      supported_features: 3
+    light.sala_de_jantar_3:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 500
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E6695BA
+      friendly_name: Sala de Jantar 3
+      supported_features: 3
+    light.sala_de_estar:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 89.00000000000001
+      color_temp: 500
+      attribution: Data provided by Wyze
+      state: 'on'
+      available: true
+      device model: WLPA19
+      mac: 2CAA8E66F06C
+      friendly_name: Sala de Estar
+      supported_features: 3
+  icon: mdi:food-turkey

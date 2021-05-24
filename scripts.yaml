@@ -1,0 +1,272 @@
+sc_netflix:
+  alias: Play Netflix
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - right
+      - select
+  mode: single
+  icon: mdi:netflix
+sc_atvon:
+  alias: Turn AppleTV On
+  sequence:
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - wakeup
+  - service: media_player.turn_on
+    target:
+      entity_id: media_player.sala_de_estar
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.sala_de_estar
+    data:
+      volume_level: 0.3
+  - repeat:
+      until:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+      sequence:
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 2
+          milliseconds: 0
+  mode: single
+  icon: mdi:apple
+sc_atv_off:
+  alias: Turn AppleTV Off
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.sala_de_estar
+    data:
+      command:
+      - home_hold
+      - select
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: media_player.turn_off
+    target:
+      entity_id: media_player.sala_de_estar
+  mode: single
+sc_continue_on_netflix:
+  alias: Continue on Netflix
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - right
+      - up
+      - select
+  mode: single
+  icon: mdi:netflix
+sc_play_disney:
+  alias: Play Disney+
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - right
+      - right
+      - select
+  mode: single
+  icon: mdi:disney
+sc_play_apple_tv:
+  alias: Play Apple Tv
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - select
+  mode: single
+  icon: mdi:apple
+sc_play_amazon_prime:
+  alias: Play Amazon Prime
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - right
+      - right
+      - right
+      - select
+  mode: single
+  icon: mdi:amazon
+sc_play_youtube:
+  alias: Play Youtube
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - right
+      - right
+      - right
+      - right
+      - select
+  mode: single
+  icon: mdi:youtube
+sc_open_iptv:
+  alias: Open IPTV
+  sequence:
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: 'on'
+        - condition: state
+          entity_id: media_player.sala_de_estar
+          state: idle
+      sequence:
+      - service: script.sc_atvon
+    default: []
+  - service: remote.send_command
+    data:
+      entity_id: remote.sala_de_estar
+      command:
+      - home
+      - top_menu
+      - down
+      - select
+  mode: single
+  icon: mdi:television
+toggle_porta_da_sala_aberta:
+  alias: Toggle Porta da Sala Aberta
+  sequence:
+  - service: input_boolean.toggle
+    target:
+      entity_id: input_boolean.porta_sala_aberta
+  mode: single
+  icon: mdi:door
+toggle_porta_dos_fundos:
+  alias: Toggle Porta dos Fundos Aberta
+  sequence:
+  - service: input_boolean.toggle
+    target:
+      entity_id: input_boolean.porta_dos_fundos_aberta
+  mode: single
+  icon: mdi:door
+saindo_de_casa:
+  alias: Saindo de casa
+  sequence:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.empty_house
+  mode: single
+  icon: mdi:home-export-outline
+chegando_em_casa:
+  alias: Chegando em casa
+  sequence:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.empty_house
+  mode: single
