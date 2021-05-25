@@ -1,7 +1,7 @@
 homeassistant:
   name: Home
-  latitude: -23.216943
-  longitude: -46.873223
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
   unit_system: metric
   time_zone: America/Sao_Paulo
   
