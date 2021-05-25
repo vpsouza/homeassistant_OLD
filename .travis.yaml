@@ -1,0 +1,15 @@
+language: python
+
+python: "3.8"
+
+before_install:
+  - touch fake_key.pem
+  - mv travis_secrets.yaml secrets.yaml
+
+install:
+  - pip3 install homeassistant
+  - pip3 install colorlog
+  - pip3 install python-dateutil
+  
+script:
+  - hass -c . --script check_config --info all
