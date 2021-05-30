@@ -1,0 +1,43 @@
+#################################################################
+#                                                               #
+#                      Packages/Lighting                        #
+#                                                               #
+#################################################################
+
+      
+#################################################################
+#                                                               #
+#                       Binary Sensors                          #
+#                                                               #
+#################################################################
+      
+binary_sensor:
+  - platform: template
+    sensors:
+      lights:
+        friendly_name: Lights
+        device_class: light
+        entity_id: group.downstairs_lights
+        value_template: "{{ is_state('group.downstairs_lights', 'on') }}"
+        icon_template: >-
+          {% if is_state('group.downstairs_lights', 'on') %}
+            fas:lightbulb
+          {% elif is_state('group.downstairs_lights', 'off') %}
+            fas:lightbulb       
+          {% else %}
+            mdi:alert
+          {% endif %}
+          
+      outside_lights:
+        friendly_name: Lights
+        device_class: light
+        entity_id: group.outside_lights
+        value_template: "{{ is_state('group.outside_lights', 'on') }}"
+        icon_template: >-
+          {% if is_state('group.outside_lights', 'on') %}
+            fas:lightbulb
+          {% elif is_state('group.outside_lights', 'off') %}
+            fas:lightbulb       
+          {% else %}
+            mdi:alert
+          {% endif %}

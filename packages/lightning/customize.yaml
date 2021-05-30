@@ -1,0 +1,85 @@
+#################################################################
+#                                                               #
+#                      Packages/Lighting                        #
+#                                                               #
+#################################################################
+
+#################################################################
+#                                                               #
+#                          Customize                            #
+#                                                               #
+#################################################################
+
+# homeassistant:
+#   customize:
+#     switch.front_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Front Light"
+#     switch.lounge_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Lounge Light"
+#     switch.hall_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Hall Light"
+#     switch.kitchen_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Kitchen"
+#     switch.dining_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Dining Light"
+#     switch.patio_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Patio Light"
+#     switch.master_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Master Light"
+#     switch.master_wardrobe_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Walk In Light"
+#     switch.jackson_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Jackson Light"
+#     switch.hudson_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Hudson Light"
+#     switch.bathroom_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: "Light"
+#     switch.bathroom_fan_switch:
+#       icon: 'mdi:fan'
+#       friendly_name: "Fan"
+#     switch.bathroom_heat_switch:
+#       icon: 'mdi:fire'
+#       friendly_name: "Heat"
+#     switch.fairy_light_power:
+#       icon: mdi:lightbulb
+#       friendly_name: Fairy Lighting
+#       assumed_state: false
+#     switch.fairy_light_mode_4:
+#       icon: mdi:lightbulb-on-outline
+#       friendly_name: Fairy Flash Mode
+#       assumed_state: false
+#     light.gateway_light_7811dcfd812f:
+#       friendly_name: TV Back Light
+#     light.gateway_light_7811dce13ad6:
+#       friendly_name: PC Back Light
+#     switch.plug_158d0001f24e2b:
+#       friendly_name: Entertainment Lighting
+#     group.downstairs_lights:
+#       icon: 'fas:lightbulb'
+#     group.upstairs_lights:
+#       icon: 'fas:lightbulb'
+#     light.lounge_bulb:
+#       icon: 'fas:lightbulb'
+#     light.dining_bulb:
+#       icon: 'fas:lightbulb'
+#     switch.laundry_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: 'Laundry'
+#     switch.playroom_light_switch:
+#       icon: 'fas:lightbulb'
+#       friendly_name: 'Playroom'
+#     light.entrance_bulb:
+#       icon: 'fas:lightbulb' 
+#     light.patio_bulb:
+#       icon: 'fas:lightbulb' 

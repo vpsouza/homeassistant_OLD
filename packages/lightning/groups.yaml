@@ -1,0 +1,36 @@
+#################################################################
+#                                                               #
+#                      Packages/Lighting                        #
+#                                                               #
+#################################################################
+
+      
+#################################################################
+#                                                               #
+#                           Group                               #
+#                                                               #
+#################################################################
+
+group:
+  sala_de_jantar:
+    name: Sala de Jantar
+    view: no
+    entities:
+      - light.sala_de_jantar_1
+      - light.sala_de_jantar_2
+      - light.sala_de_jantar_3
+      
+  toda_a_sala:
+    name: Toda a Sala
+    view: no
+    entities:
+      - light.sala_de_jantar
+      - light.sala_de_estar
+      - light.eb71dbdd1c24fcaafaxs5v
+      
+  todas_as_luzes:
+    name: Todas as Luzes
+    view: no
+    entities:
+      - light.toda_a_sala
+      - light.escritorio

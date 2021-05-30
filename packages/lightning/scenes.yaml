@@ -1,0 +1,96 @@
+
+#                                                               #
+#                      Packages/Lighting                        #
+#                                                               #
+#################################################################
+
+
+#################################################################
+#                                                               #
+#                            Scenes                             #
+#                                                               #
+#################################################################
+
+scene:
+
+  - name: Livingroom normal
+    entities:
+      light.lounge_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 75
+        color_temp: 280
+      light.dining_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 85
+        color_temp: 333
+          
+  - name: Livingroom dim
+    entities:
+      light.lounge_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 15
+        color_temp: 280
+      light.dining_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 25
+        color_temp: 333
+          
+  - name: Hall dim 
+    entities:
+      light.hall_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 15
+          
+  - name: Hall normal 
+    entities:
+      light.hall_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 75
+          
+  - name: Hall dusk 
+    entities:
+      light.hall_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 50
+          
+  - name: Livingroom Bright
+    entities:
+      light.dining_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 100
+        color_temp: 175
+      light.lounge_bulb:
+        state: on
+        transition: 2
+        brightness_pct: 100
+        color_temp: 175
+          
+  - name: Backlights Night
+    entities:
+      light.gateway_light_7811dcfd812f:
+        state: on
+        brightness: 255
+        rgb_color: [0,0,255]
+      light.gateway_light_7811dce13ad6:
+        state: on
+        brightness: 255
+        rgb_color: [0,0,255]
+        
+  - name: Office Test
+    entities:
+      light.gateway_light_7811dcfd812f:
+        state: on
+        brightness: 255
+        rgb_color: [255,0,0]
+      light.gateway_light_7811dce13ad6:
+        state: on
+        brightness: 255
+        rgb_color: [255,0,0]

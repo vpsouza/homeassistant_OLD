@@ -1,0 +1,137 @@
+#################################################################
+#                                                               #
+#                      Packages/Lighting                        #
+#                                                               #
+#################################################################
+
+      
+#################################################################
+#                                                               #
+#                         Automations                           #
+#                                                               #
+#################################################################
+
+## Some automations for this package have now been moved to Node-RED please see Node-Red Flows folder within this package for more infomation! ##
+
+automation:
+  - alias: Lounge Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.lounge_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.lounge_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Dining Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.dining_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.dining_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Hall Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.hall_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.hall_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Bedroom Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.bedroom_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.bedroom_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Gateway 1 Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.gateway1_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.gateway_light_7811dcfd812f
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Gateway 2 Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.gateway2_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.gateway_light_7811dce13ad6
+          brightness: "{{ trigger.to_state.state | int }}"
+
+
+automation:
+  - alias: Lounge Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.lounge_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.lounge_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Dining Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.dining_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.dining_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Hall Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.hall_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.hall_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Bedroom Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.bedroom_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.bedroom_bulb
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Gateway 1 Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.gateway1_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.gateway_light_7811dcfd812f
+          brightness: "{{ trigger.to_state.state | int }}"
+          
+  - alias: Gateway 2 Light - Adjust Brightness
+    trigger:
+      platform: state
+      entity_id: input_number.gateway2_brightness
+    action:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.gateway_light_7811dce13ad6
+          brightness: "{{ trigger.to_state.state | int }}"

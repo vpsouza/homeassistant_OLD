@@ -3,28 +3,11 @@ homeassistant:
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
   unit_system: metric
+  temperature_unit: C
   time_zone: America/Sao_Paulo
+  packages: !include_dir_named packages
+  customize: !include includes/customize.yaml
   
-light:
-  - platform: wiz_light
-    name: Escritório
-    host: 192.168.68.121
-  - platform: group
-    name: Todas as Luzes
-    entities:
-      - light.sala_de_estar
-      - light.eb71dbdd1c24fcaafaxs5v
-      - light.sala_de_jantar_1
-      - light.sala_de_jantar_2
-      - light.sala_de_jantar_3
-      - light.escritorio
-  - platform: group
-    name: Sala de Jantar
-    entities:
-      - light.sala_de_jantar_1
-      - light.sala_de_jantar_2
-      - light.sala_de_jantar_3
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
@@ -32,7 +15,6 @@ default_config:
 tts:
   - platform: google_translate
 
-group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

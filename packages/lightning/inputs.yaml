@@ -1,0 +1,55 @@
+#################################################################
+#                                                               #
+#                      Packages/Lighting                        #
+#                                                               #
+#################################################################
+
+          
+#################################################################
+#                                                               #
+#                           Inputs                              #
+#                                                               #
+#################################################################
+
+input_number:
+  lounge_brightness:
+    name: Brightness
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+    
+  dining_brightness:
+    name: Brightness
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+    
+  hall_brightness:
+    name: Brightness
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+    
+  bedroom_brightness:
+    name: Brightness
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+    
+  gateway1_brightness:
+    name: Brightness
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+    
+  gateway2_brightness:
+    name: Brightness
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
